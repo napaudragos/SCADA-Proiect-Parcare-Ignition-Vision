@@ -11,48 +11,35 @@ Acest proiect reprezintă o soluție completă de automatizare și monitorizare 
 
 ---
 
-## 🚗 1. Sistem de Monitorizare Parcare (Smart Parking)
+## 🚗 1. Monitorizare Parcare Inteligentă (Smart Parking)
 
-Această fereastră gestionează starea locurilor de parcare și timpul de ocupare. Include o logică de securitate care monitorizează cât timp un vehicul staționează într-un loc rezervat.
+**Această fereastră oferă o imagine de ansamblu asupra disponibilității parcării, integrând monitorizarea timpului de staționare și alerte automate.**
 
-**Funcționalități cheie:**
-* **Timer Ocupare:** Calculul în timp real al duratei de staționare.
-* **Alarme Critice:** Declanșarea unei alerte vizuale în tabelul de avarii dacă timpul de ocupare depășește pragul setat.
-* **Interfață Intuitivă:** Schimbarea dinamică a stării vizuale a locurilor de parcare.
-
+* **Simulare prin Timer Script:** Am utilizat un script de tip timer pentru a simula creșterea timpului în timp real. Această soluție înlocuiește necesitatea unui PLC fizic, făcând proiectul ușor de prezentat și foarte user-friendly.
+* **Arhitectură bazată pe UDT:** Fiecare loc de parcare este definit printr-un **UDT (User Defined Type)**. Am creat o singură structură pe care am instanțiat-o ulterior, demonstrând o abordare scalabilă și organizată.
+* **Alarme Dinamice:** Am configurat alarme personalizate pentru fiecare loc folosind parametrul `{Loc_parcare_numar}`. Astfel, mesajele de eroare sunt generate automat cu numărul corect al locului de parcare.
+* **Feedback Vizual :** Culoarea indicatorului de stare se schimbă dinamic (Verde pentru liber / Roșu pentru ocupat) în funcție de prezența vehiculului.
+* **Navigare Rapidă:** Include un buton de acces direct către fereastra de control HVAC pentru o gestionare eficientă a întregului sistem SCADA.
 #### 🎥 Demo: Logica de Timp și Alarma de Ocupare
 
 https://github.com/user-attachments/assets/caa5317b-7175-4fa8-a9f7-c89e6f56b212
 
 ---
 
-## ❄️ 2. Control HVAC și Automatizare Temperatură
+## ❄️ 2. Automatizare HVAC și Monitorizare Temperatură
 
-Sistemul de climatizare funcționează complet automat, utilizând un algoritm de tip **Hysteresis (Deadband)** pentru a proteja echipamentele împotriva pornirilor/opririlor repetate.
+**Această fereastră este responsabilă pentru controlul automat al climatizării, asigurând menținerea temperaturii în parametri optimi prin procese de răcire și încălzire.**
 
-**Logica de Operare:**
-* **Ventilație (Răcire):** Pornește automat la **>25°C** și se oprește doar când temperatura scade sub **22°C**.
-* **Încălzire (Frost Protection):** Activare automată la **<7°C** pentru prevenirea înghețului, cu oprire la **10°C**.
-
+* **Simulare prin Slider:** Am integrat un slider pentru controlul temperaturii, oferind o metodă **user-friendly** de a simula variațiile de mediu și de a testa reacția sistemului în timp real, fără a depinde de senzori externi.
+* **Logică de Operare (Protecție Echipamente):** Sistemul utilizează praguri diferențiate pentru a asigura stabilitatea procesului și a evita pornirile/opririle repetate:
+    * **Ventilație (Răcire):** Activare automată la **>25°C** și oprire la **<22°C**.
+    * **Încălzire (Frost Protection):** Activare sub **7°C** și oprire la atingerea pragului de **10°C**.
+* **Animații Avansate:** Am utilizat **formule matematice** corelate cu un timer pentru a genera mișcarea fluidă a simbolurilor. Pentru o interfață curată, am setat vizibilitatea condiționată: animațiile (flacăra sau fluxul de aer) devin vizibile pe ecran doar atunci când sistemul respectiv este activ.
+* **Monitorizare Avarii:** Include un tabel de evenimente configurat cu alarme specifice pentru pragurile critice, permițând identificarea rapidă a problemelor de temperatură.
+* **Navigare:** Fereastra este prevăzută cu un buton de întoarcere rapidă către modulul de monitorizare a parcării.
 #### 🎥 Demo: Animații Dinamice și Reacția la Temperatură
 
 https://github.com/user-attachments/assets/e5575098-49b7-4dec-bee7-592605666bfe
-
----
-
-## 🛠️ Detalii Tehnice (Tech Stack)
-
-### 🐍 Programare și Logică
-* **Python Scripting:** Implementat pe evenimente de tip `valueChanged` la nivel de Tag pentru controlul proceselor.
-* **Expression Language:** Utilizat pentru animații fluide și vizibilitate condiționată.
-* **Hysteresis Logic:** Algoritm de control industrial pentru eficiența consumului.
-
-### 🎨 Design și Animații (Advanced Math)
-În loc să folosim animații predefinite, am utilizat funcții matematice pentru o redare fluidă:
-* **Flacăra Pulsantă:** Implementată printr-o funcție liniară de tip Triangle Wave:  
-    `397.48 - abs(((Timer % 80) - 40) * 0.1)`
-* **Flux de Aer (Particule):** Vizibilitate condiționată bazată pe starea booleană a sistemului:  
-    `{[default]Pornire_stare_ventilatie} = 1`
 
 ---
 
