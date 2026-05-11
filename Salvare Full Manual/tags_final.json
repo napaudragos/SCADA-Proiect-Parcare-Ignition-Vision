@@ -1,0 +1,48 @@
+{
+  "name": "Loc_Parcare",
+  "parameters": {
+    "Loc_parcare_numar": {
+      "dataType": "Integer"
+    }
+  },
+  "tagType": "UdtType",
+  "tags": [
+    {
+      "alarms": [
+        {
+          "displayPath": "Loc  {Loc_parcare_numar} Timp Depasit",
+          "name": "Avarie_Timp_depasit",
+          "priority": "Medium",
+          "setpointA": 1.0
+        }
+      ],
+      "expression": "if({[.]Timp_loc} \u003e\u003d 10, 1, 0)",
+      "name": "Depasire_timp",
+      "tagType": "AtomicTag",
+      "valueSource": "expr"
+    },
+    {
+      "name": "Timp_loc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "nsu\u003dKepware Server;s\u003dChannel1.Device1.Timp_loc{Loc_parcare_numar}"
+      },
+      "opcServer": "Prima conexiune",
+      "tagType": "AtomicTag",
+      "valueSource": "opc"
+    },
+    {
+      "name": "Cuvant_ocupare_locuri",
+      "opcItemPath": "nsu\u003dKepware Server;s\u003dChannel1.Device1.Cuvant_ocupare_locuri",
+      "opcServer": "Prima conexiune",
+      "tagType": "AtomicTag",
+      "valueSource": "opc"
+    },
+    {
+      "expression": "getBit({[.]Cuvant_ocupare_locuri}, {Loc_parcare_numar}-1)",
+      "name": "Ocuparea_locului",
+      "tagType": "AtomicTag",
+      "valueSource": "expr"
+    }
+  ]
+}
