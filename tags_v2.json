@@ -1,8 +1,0 @@
-{
-  "dataType": "Int4",
-  "name": "Cuvant_ocupare_locuri",
-  "opcItemPath": "nsu\u003dKepware Server;s\u003dChannel1.Device1.Cuvant_ocupare_locuri",
-  "opcServer": "Prima conexiune",
-  "tagType": "AtomicTag",
-  "valueSource": "opc"
-}
