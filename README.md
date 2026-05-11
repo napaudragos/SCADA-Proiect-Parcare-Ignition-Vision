@@ -1,4 +1,3 @@
-<img width="1098" height="800" alt="image" src="https://github.com/user-attachments/assets/38c633a5-07a9-4601-87b0-5fa94660170d" /># 🌡️ Smart Industry SCADA: Sistem de Monitorizare Parcare și Control HVAC
 
 Acest proiect reprezintă o soluție completă de automatizare și monitorizare realizată în platforma **Ignition 8.1 (Vision Module)**. Proiectul integrează managementul unei parcări inteligente cu un sistem avansat de control al climatizării industriale, punând accent pe eficiență energetică și animații dinamice.
 
