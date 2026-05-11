@@ -1,3 +1,4 @@
+# 🌡️ Smart Industry SCADA: Sistem de Monitorizare Parcare și Control HVAC
 
 Acest proiect reprezintă o soluție completă de automatizare și monitorizare realizată în platforma **Ignition 8.1 (Vision Module)**. Proiectul integrează managementul unei parcări inteligente cu un sistem avansat de control al climatizării industriale, punând accent pe eficiență energetică și animații dinamice.
 
@@ -6,8 +7,7 @@ Acest proiect reprezintă o soluție completă de automatizare și monitorizare 
 ## 📸 Prezentare Vizuală
 
 ### Interfața Principală 
-<img width="1098" height="800" alt="image" src="https://github.com/user-attachments/assets/0307b3f1-23a9-41a5-a5ab-a42dcf6144a7" />
-<img width="1099" height="798" alt="image" src="https://github.com/user-attachments/assets/243f3016-e842-416b-8b70-2cbaa8ac9664" />
+<img width="1378" height="492" alt="image" src="https://github.com/user-attachments/assets/4f02b2d8-77ec-4f85-9f50-f8c56dd14b74" />
 
 ---
 
@@ -21,9 +21,8 @@ Această fereastră gestionează starea locurilor de parcare și timpul de ocupa
 * **Interfață Intuitivă:** Schimbarea dinamică a stării vizuale a locurilor de parcare.
 
 #### 🎥 Demo: Logica de Timp și Alarma de Ocupare
-> [!IMPORTANT]
-> *Aici încarcă GIF-ul în care se vede cum crește timpul pe locul de parcare și cum apare alarma în tabel.*
-![Demo Parcare](URL_GIF_PARCARE_AICI)
+
+https://github.com/user-attachments/assets/caa5317b-7175-4fa8-a9f7-c89e6f56b212
 
 ---
 
@@ -36,9 +35,8 @@ Sistemul de climatizare funcționează complet automat, utilizând un algoritm d
 * **Încălzire (Frost Protection):** Activare automată la **<7°C** pentru prevenirea înghețului, cu oprire la **10°C**.
 
 #### 🎥 Demo: Animații Dinamice și Reacția la Temperatură
-> [!IMPORTANT]
-> *Aici încarcă GIF-ul cu flacăra, ventilatorul care se învârte și particulele de aer care apar doar când sistemul este activ.*
-![Demo HVAC Animații](URL_GIF_HVAC_AICI)
+
+https://github.com/user-attachments/assets/e5575098-49b7-4dec-bee7-592605666bfe
 
 ---
 
