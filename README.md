@@ -59,5 +59,3 @@ https://github.com/user-attachments/assets/e5575098-49b7-4dec-bee7-592605666bfe
 3.  Importați `tags_logic.json` în Tag Browser.
 4.  Importați `Proiect_Parcare_Final.zip` în Designer.
 
----
-*Proiect realizat în scop academic pentru demonstrarea competențelor de integrare SCADA și programare industrială.*
